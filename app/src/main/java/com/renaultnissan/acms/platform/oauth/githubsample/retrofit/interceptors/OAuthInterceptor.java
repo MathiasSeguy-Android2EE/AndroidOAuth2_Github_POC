@@ -31,10 +31,13 @@
 
 package com.renaultnissan.acms.platform.oauth.githubsample.retrofit.interceptors;
 
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.renaultnissan.acms.platform.oauth.githubsample.MyApplication;
 import com.renaultnissan.acms.platform.oauth.githubsample.transverse.model.OAuthToken;
+import com.renaultnissan.acms.platform.oauth.githubsample.view.MainActivity;
 
 import java.io.IOException;
 
@@ -62,6 +65,10 @@ public class OAuthInterceptor implements Interceptor {
             builder.header("Authorization",accessTokenType+" " + accessToken);
         }else{
             Log.e(TAG,"In the interceptor there is a fuck with : "+accessTokenType+" " + accessToken);
+            //you should launch the loginActivity to fix that:
+            Intent i = new Intent(MyApplication.instance, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            MyApplication.instance.startActivity(i);
         }
         //proceed to the call
         return chain.proceed(builder.build());

@@ -54,6 +54,11 @@ public class LoginActivity extends AppCompatActivity {
      */
     public static final String GRANT_TYPE_REFRESH_TOKEN = "refresh_token";
     /**
+     * The scope: what do we want to use
+     * Here we want to be able to do anything on the user's GDrive
+     */
+    public static final String API_SCOPE = "https://www.googleapis.com/auth/drive";
+    /**
      * The code returned by the server at the authorization's first step
      */
     private String code;
@@ -136,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
         HttpUrl authorizeUrl = HttpUrl.parse("https://accounts.google.com/o/oauth2/v2/auth") //
                 .newBuilder() //
                 .addQueryParameter("client_id", CLIENT_ID)
-                .addQueryParameter("scope", "https://www.googleapis.com/auth/drive")
+                .addQueryParameter("scope", API_SCOPE)
                 .addQueryParameter("redirect_uri", REDIRECT_URI)
                 .addQueryParameter("response_type", CODE)
                 .build();

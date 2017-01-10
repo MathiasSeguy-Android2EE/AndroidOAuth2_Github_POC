@@ -125,7 +125,7 @@ public class RetrofitBuilder {
     }
 
     /**
-     * Return a simple OkHttpClient v:
+     * Return a OAuth OkHttpClient v:
      * have a cache
      * have a HttpLogger
      * add automaticly the token in the header of each request because of the oAuthInterceptor
