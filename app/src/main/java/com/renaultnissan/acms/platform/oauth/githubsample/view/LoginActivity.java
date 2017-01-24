@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
      * You client id, you have it from the google console when you register your project
      * https://console.developers.google.com/a
      */
-    private static final String CLIENT_ID = "1020597890643-n3m1t7fplcv2t0f78g7miachq7lgnbrv.apps.googleusercontent.com";
+    private static final String CLIENT_ID = "1020597890643-d74gsb0vrp27l3sau8ia0u57lc2i9v5r.apps.googleusercontent.com";
     /**
      * The redirect uri you have define in your google console for your project
      */
